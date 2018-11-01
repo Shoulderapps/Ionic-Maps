@@ -20,6 +20,7 @@ export class MapsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapsPage');
+    // this.loadGoogleMap();
   }
 
 

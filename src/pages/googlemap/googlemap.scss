@@ -1,6 +1,27 @@
 page-googlemap {
-	#map_container1{
+	#map_container{
 		width: 100%;
-		height: 100%;
+		height: 70%;
+	}
+	
+	#ionic_table{
+	  height: 30%;
+	  ion-row {
+	    height: 33%;
+
+	  }
+	}
+
+	#distance{
+		color: #32db64;
+		font-size: 20px;
+		text-align: center;
+
 	}
 }
+
+
+
+
+
+

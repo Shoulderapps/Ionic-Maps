@@ -15,10 +15,14 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class TabsPage {
 
+  memberRoot = 'MemberPage'
+  // callsRoot = 'CallsPage'
+  // starsRoot = 'StarsPage'
+  googlemapRoot = 'GoogleMapPage'
   mapsRoot = 'MapsPage'
-  callsRoot = 'CallsPage'
-  starsRoot = 'StarsPage'
-
+  bookingRoot = 'BookingPage'
+	couponRoot = 'CouponPage'
+	serviceRoot = 'ServicePage'
 
   constructor(public navCtrl: NavController) {}
 

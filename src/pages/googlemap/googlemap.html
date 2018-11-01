@@ -6,13 +6,99 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>谷歌地图</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>map</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <div #map1 id="map_container1"></div>
+  <div #map id="map_container" data-tap-disabled="true"></div>
+  <div id = "ionic_table">
+	  
+	    <ion-row id ="table_cell">
+	    	<ion-grid>
+	    		<ion-row > 
+	    			<ion-col col-2> 
+							<img src="./assets/imgs/avatar.png">
+	    			</ion-col>
+	      		<ion-col col-8> 
+	      			<ion-grid>
+		      			<ion-row> 
+		      				 shop1 
+		      			</ion-row>
+		      			<ion-row> 
+									Company Address
+		      			</ion-row>
+		      		</ion-grid>
+	      		</ion-col>
+	      		<ion-col id = "distance"  col-2> 0.8 Km </ion-col>
+	      	</ion-row>
+	      </ion-grid>
+	    </ion-row>
+	    <ion-row>
+	    	<ion-grid>
+	    		<ion-row > 
+	    			<ion-col col-2> 
+							<img src="./assets/imgs/avatar2.png">
+	    			</ion-col>
+	      		<ion-col col-8> 
+	      			<ion-grid>
+		      			<ion-row> 
+		      				 shop2 
+		      			</ion-row>
+		      			<ion-row> 
+									Company Address
+		      			</ion-row>
+		      		</ion-grid>
+	      		</ion-col>
+	      		<ion-col id = "distance"  col-2> 1.0 Km </ion-col>
+	      	</ion-row>
+	      </ion-grid>
+	    </ion-row>
+	    <ion-row>
+	    	<ion-grid>
+	    		<ion-row > 
+	    			<ion-col col-2> 
+							<img src="./assets/imgs/avatar3.png">
+	    			</ion-col>
+	      		<ion-col col-8> 
+	      			<ion-grid>
+		      			<ion-row> 
+		      				 shop3 
+		      			</ion-row>
+		      			<ion-row> 
+									Company Address
+		      			</ion-row>
+		      		</ion-grid>
+	      		</ion-col>
+	      		<ion-col id = "distance"  col-2> 2.8 Km </ion-col>
+	      	</ion-row>
+	      </ion-grid>
+	    </ion-row>
+
+	    <ion-row>
+	    	<ion-grid>
+	    		<ion-row > 
+	    			<ion-col col-2> 
+							<img src="./assets/imgs/avatar.png">
+	    			</ion-col>
+	      		<ion-col col-8> 
+	      			<ion-grid>
+		      			<ion-row> 
+		      				 Company Name 
+		      			</ion-row>
+		      			<ion-row> 
+									Company Address
+		      			</ion-row>
+		      		</ion-grid>
+	      		</ion-col>
+	      		<ion-col id = "distance"  col-2> 2.0 Km </ion-col>
+	      	</ion-row>
+	      </ion-grid>
+	    </ion-row>	    	    	    	    	        
+	  
+	</div>
+
 </ion-content>
