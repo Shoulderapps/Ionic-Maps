@@ -20,9 +20,11 @@ export class TabsPage {
   // starsRoot = 'StarsPage'
   googlemapRoot = 'GoogleMapPage'
   mapsRoot = 'MapsPage'
-  bookingRoot = 'BookingPage'
-	couponRoot = 'CouponPage'
+  // bookingRoot = 'BookingPage'
+	scancodeRoot = 'ScancodePage'
+  couponRoot = 'CouponPage'
 	serviceRoot = 'ServicePage'
+
 
   constructor(public navCtrl: NavController) {}
 

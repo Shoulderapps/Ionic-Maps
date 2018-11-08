@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation, PositionError, Geoposition } from '@ionic-native/geolocation';
+import { ShopdetailPage } from '../../pages/shopdetail/shopdetail';
 
 /**
  * Generated class for the MapPage page.
@@ -39,9 +40,9 @@ export class GoogleMapPage {
     // var marker, i;
     this.loadMap();
     // this.showMyLocation();
-    this.addMarker(22.373, 114.109, {name: "shop1", detail: "car washing store"});
-    this.addMarker(22.374, 114.108, {name: "shop2", detail: "car beauty store"});
-    this.addMarker(22.370, 114.112, {name: "shop3", detail: "car washing store"});
+    this.addMarker(22.373, 114.109, {name: "shop1", detail: "car washing store", image: "./assets/imgs/shop1.jpg" });
+    this.addMarker(22.374, 114.108, {name: "shop2", detail: "car beauty store", image: "./assets/imgs/shop2.jpg" });
+    this.addMarker(22.370, 114.112, {name: "shop3", detail: "car washing store", image: "./assets/imgs/shop3.jpg" });
 
   }
 
@@ -86,7 +87,7 @@ export class GoogleMapPage {
         }
     });
 
-    let content = '<div id="myid"><h3 id="firstHeading" class="firstHeading">' + marker.title + '</h3><img src="./assets/imgs/car-wash-favicon.ico"></br></h4>'+marker.snippet+'</h4></div>';    
+    let content = '<div id="myid"><h3 id="firstHeading" >' + marker.title + '</h3><img id="markerImg" src='+place.image+'></br><h6>'+marker.snippet+'</h6></div>';    
     console.log(content);
     this.addInfoWindow(marker, content);
   }
@@ -107,10 +108,24 @@ export class GoogleMapPage {
     google.maps.event.addListener(marker, 'click', () =>{
         if( this.currWindow ) {
            this.currWindow.close();
+           // Remove all click listeners from marker instance
+           google.maps.event.clearListeners(infoWindow, 'click');  
         }
         this.currWindow = infoWindow;        
         infoWindow.open(this.map, marker);
+
+        google.maps.event.addListener(infoWindow, 'domready', () => {
+          //now my elements are ready for dom manipulation
+          var clickableItem = document.getElementById('firstHeading');
+          clickableItem.addEventListener('click', () => {
+          this.navCtrl.push(ShopdetailPage);
+          
+          });
+        });        
+
     });
+
+
   
     // var marker, i;
 

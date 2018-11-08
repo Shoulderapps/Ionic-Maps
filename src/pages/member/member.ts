@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AboutusPage } from '../../pages/aboutus/aboutus';
+import { QrcodePage } from '../../pages/qrcode/qrcode';
 
 /**
  * Generated class for the MemberPage page.
@@ -15,8 +16,6 @@ import { AboutusPage } from '../../pages/aboutus/aboutus';
   templateUrl: 'member.html',
 })
 export class MemberPage {
-
-	// aboutUsPage = AboutusPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -35,6 +34,11 @@ export class MemberPage {
 
   bookingRecord(){
 		console.log('ionViewDidLoad bookingRecord');
+  }
+
+  myQrCode(){
+   console.log('ionViewDidLoad myQrCode'); 
+   this.navCtrl.push(QrcodePage);
   }
 
   otherStuff(){

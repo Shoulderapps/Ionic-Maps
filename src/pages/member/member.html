@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>member</ion-title>
+    <ion-title> Member </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -54,8 +54,10 @@
 		    My Booking
 		  </button>
 
-		<!--   <ion-item-divider>
-		  </ion-item-divider> -->
+		  <button ion-item (click)="myQrCode()">
+		    <ion-icon name="qr-scanner" color="lightdark" item-start></ion-icon>
+		    QR Code
+		  </button>
 
 		  <button ion-item (click)="otherStuff()">
 		    <ion-icon name="star" color="orange" item-start></ion-icon>
