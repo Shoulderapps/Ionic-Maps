@@ -42,7 +42,7 @@ export class GoogleMapPage {
     // this.showMyLocation();
     this.addMarker(22.373, 114.109, {name: "shop1", detail: "car washing store", image: "./assets/imgs/shop1.jpg" });
     this.addMarker(22.374, 114.108, {name: "shop2", detail: "car beauty store", image: "./assets/imgs/shop2.jpg" });
-    this.addMarker(22.370, 114.112, {name: "shop3", detail: "car washing store", image: "./assets/imgs/shop3.jpg" });
+    // this.addMarker(22.370, 114.112, {name: "shop3", detail: "car washing store", image: "./assets/imgs/shop3.jpg" });
 
   }
 
@@ -83,7 +83,7 @@ export class GoogleMapPage {
           // The origin for this image is (0, 0).
           origin: new google.maps.Point(0, 0),
           // The anchor for this image is the base of the flagpole at (0, 32).
-          anchor: new google.maps.Point(0, 12)
+          anchor: new google.maps.Point(0, 0)
         }
     });
 
@@ -109,23 +109,32 @@ export class GoogleMapPage {
         if( this.currWindow ) {
            this.currWindow.close();
            // Remove all click listeners from marker instance
-           google.maps.event.clearListeners(infoWindow, 'click');  
+           // google.maps.event.clearListeners(infoWindow, 'click'); 
+           // google.maps.event.clearListeners(marker, 'click'); 
         }
-        this.currWindow = infoWindow;        
+       
         infoWindow.open(this.map, marker);
+
+        this.currWindow = infoWindow; 
+
+    });
 
         google.maps.event.addListener(infoWindow, 'domready', () => {
           //now my elements are ready for dom manipulation
           var clickableItem = document.getElementById('firstHeading');
-          clickableItem.addEventListener('click', () => {
-          this.navCtrl.push(ShopdetailPage);
+          clickableItem.addEventListener('click', () => {   
+            if( this.currWindow ) {
+               // this.currWindow.close();
+               // Remove all click listeners from marker instance
+               google.maps.event.clearListeners(infoWindow, 'click'); 
+               // google.maps.event.clearListeners(marker, 'click'); 
+            }
+
+          
+            this.navCtrl.push(ShopdetailPage);
           
           });
-        });        
-
-    });
-
-
+        });
   
     // var marker, i;
 
